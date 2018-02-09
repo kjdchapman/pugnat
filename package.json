@@ -17,5 +17,8 @@
   },
   "jest": {
     "preset": "jest-preset-coffeescript"
+  },
+  "dependencies": {
+    "coffeescript": "^2.2.1"
   }
 }
