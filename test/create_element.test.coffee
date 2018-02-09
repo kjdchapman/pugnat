@@ -18,6 +18,12 @@ describe 'div with a class', =>
   test 'creates a div element with a class', =>
     expect(result).toBe "<div class='foo'>wow</div>"
 
+describe 'div with an id', =>
+  set 'result', () => Pug.create "div", { content: "wow", id: "foo" }
+
+  test 'creates a div element with a class', =>
+    expect(result).toBe "<div id='foo'>wow</div>"
+
 
 
 # React.createElement(

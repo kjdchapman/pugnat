@@ -1,16 +1,14 @@
 Pug =
   attributes: (props) ->
-    relevantProps = []
+    rawHTML = ''
 
     for key, value of props when key isnt 'content'
-      relevantProps.push { key: value }
+      key = 'class' if key is 'className'
+      rawHTML += " #{key}='#{value}'"
 
-    if relevantProps.length > 0
-      return " class='#{value}'"
-    else
-      return ""
+    return rawHTML
 
   create: (tag, props) ->
-    return "<#{tag}#{@attributes(props)}>#{props.content}</#{tag}>"
+    "<#{tag}#{@attributes(props)}>#{props.content}</#{tag}>"
 
 export { Pug }
